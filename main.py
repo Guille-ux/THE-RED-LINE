@@ -103,17 +103,22 @@ while True:
                         if enemy[1].collidepoint(pos):
                             enemy[2] -= select[3] 
                             select[2] -= enemy[3]
-                            if enemy[2] <= 0:
+                            if enemy[2] < select[2]:
+                                enemy[2] = 0
                                 enemy[0] = destroy
-                            if select[2] <= 0:
+                            elif enemy[2] > select[2]:
+                                select[2] = 0
                                 select[0] = destroy
-                        select = None
-                        collision = True
-                    if not collision:
-                        for terr in blocks:
-                            if terr[1].collidepoint(pos):
-                                target = terr
-                                break
+                            else:
+                                enemy[2] = 0
+                                enemy[0] = destroy
+                                select[2] = 0
+                                select[0] = destroy
+                        break
+                    for terr in blocks:
+                        if terr[1].collidepoint(pos):
+                            target = terr
+                            break
                     move = True
                 if target is not None:
                     select[1].center = target[1].center
