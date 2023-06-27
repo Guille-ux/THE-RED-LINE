@@ -157,6 +157,6 @@ while True:
                     if not ene[1].top == 0:
                         ene[1].center += 70
                     else:
-                        ene[1.center -= 70]
+                        ene[1].center -= 70
     pygame.display.flip()
     clock.tick(60)
