@@ -22,6 +22,7 @@ screen = pygame.display.set_mode((500, 700))
 clock = pygame.time.Clock()
 pygame.display.set_caption("THE RED LINE")
 #graphics load
+destroy = pygame.image.load("assets/destroy.png")
 play = pygame.image.load("assets/play.png")
 buttonrect = play.get_rect(centerx = 50)
 buttonrect.x = 230
@@ -39,7 +40,7 @@ for y in range(10):
 #allies and enemys
 enemys = []
 for x in range(7):
-    tankrect = tank.get_rect(left=x*70, top=0)
+    tankrect = tank.get_rect(left=x*70, top=630)
     enemys.append((tonk, tankrect, 12, 6))
 allies = []
 for x in range(7):
@@ -89,18 +90,21 @@ while True:
             if select is None:
                 for allie in allies:
                     if allie[1].collidepoint(pos):
-                        select = allie
+                        if allie[2] <= 0:
+                            pass
+                        else:
+                            select = allie
                         break
             else:
                 distance = math.sqrt((select[1].x - pos[0])**2 + (pos[1] - select[1].y)**2)
                 if distance <= 140:
                     for enemy in enemys:
                         if enemy[1].collidepoint(pos):
-                            enemy[3] -= select[2] 
-                            select[3] -= enemy[2]
-                            if enemy[3] <= 0:
+                            enemy[2] -= select[3] 
+                            select[2] -= enemy[3]
+                            if enemy[2] <= 0:
                                 enemy[0] = destroy
-                            if select[3] <= 0:
+                            if select[2] <= 0:
                                 select[0] = destroy
                     if move = False:
                         for terr in blocks:
