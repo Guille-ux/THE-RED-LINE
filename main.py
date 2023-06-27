@@ -27,7 +27,7 @@ play = pygame.image.load("assets/play.png")
 buttonrect = play.get_rect(centerx = 50)
 buttonrect.x = 230
 buttonrect.y = 350
-tonk = pygame.image.load("assets/tonk.png")
+tonk = pygame.image.load("assets/tonks.png")
 tank = pygame.image.load("assets/tank.png")
 infantry = pygame.image.load("assets/infantry.png")
 block = pygame.image.load("assets/terrain.png")
