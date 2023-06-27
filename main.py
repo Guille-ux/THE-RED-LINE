@@ -109,7 +109,7 @@ while True:
                                 select[0] = destroy
                         select = None
                         collision = True
-                    if is not collision:
+                    if not collision:
                         for terr in blocks:
                             if terr[1].collidepoint(pos):
                                 target = terr
