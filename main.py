@@ -11,6 +11,7 @@ RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 GREEN = (0, 255, 0)
 #game variables
+move = True
 on = False
 select = None
 target = None
@@ -71,7 +72,7 @@ while True:
             if event.button == 1:
                 on_mouse_down(event.pos)
     def on_mouse_down(pos):
-        global on, select, allies, blocks, target
+        global on, select, allies, blocks, target, move
 
         if on == False:
             if buttonrect.collidepoint(pos):
@@ -85,11 +86,13 @@ while True:
             else:
                 distance = math.sqrt((select[1].x - pos[0])**2 + (pos[1] - select[1].y)**2)
                 if distance <= 140:
-                    for terr in blocks:
-                        if terr[1].collidepoint(pos):
-                            target = terr
-                            break
-
+                    
+                    if move = False:
+                        for terr in blocks:
+                            if terr[1].collidepoint(pos):
+                                target = terr
+                                break
+                    move = True
                 if target is not None:
                     select[1].center = target[1].center
 
