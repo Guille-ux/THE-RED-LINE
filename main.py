@@ -130,7 +130,7 @@ while True:
                 ene = random.choice(enemys)
                 algo = False
                 for all in allies:
-                    distance = math.sqrt((ene[1].x - all[1])**2 + (all[1] - ene[1].y)**2)
+                    distance = math.sqrt((ene[1].x - all[1].x)**2 + (all[1].y - ene[1].y)**2)
                     if distance <= 140:
                         if enemy[1].colliderect(ene[1]):
                             enemy[2] -= select[3] 
@@ -155,8 +155,8 @@ while True:
                             algo = True
                 if not algo:
                     if not ene[1].top == 0:
-                        ene[1].center += 70
+                        ene[1].top -= 70
                     else:
-                        ene[1].center -= 70
+                        ene[1].top += 70
     pygame.display.flip()
     clock.tick(60)
