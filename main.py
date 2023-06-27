@@ -106,7 +106,9 @@ while True:
                                 enemy[0] = destroy
                             if select[2] <= 0:
                                 select[0] = destroy
-                    if move = False:
+                        select = None
+                        move = False
+                    if move == True:
                         for terr in blocks:
                             if terr[1].collidepoint(pos):
                                 target = terr
