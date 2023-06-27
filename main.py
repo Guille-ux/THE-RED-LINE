@@ -41,14 +41,14 @@ for y in range(10):
 enemys = []
 for x in range(7):
     tankrect = tank.get_rect(left=x*70, top=630)
-    enemys.append((tonk, tankrect, 12, 6))
+    enemys.append([tonk, tankrect, 12, 6])
 allies = []
 for x in range(7):
     tankrect = tank.get_rect(left=x*70, top=0)
-    allies.append((tank, tankrect, 10, 5))
+    allies.append([tank, tankrect, 10, 5])
 for x in range(7):
     peoplerect = infantry.get_rect(left=x*70, top=70)
-    allies.append((infantry, peoplerect, 5, 3))
+    allies.append([infantry, peoplerect, 5, 3])
 
 
 #font
