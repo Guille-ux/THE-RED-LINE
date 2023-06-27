@@ -26,6 +26,7 @@ play = pygame.image.load("assets/play.png")
 buttonrect = play.get_rect(centerx = 50)
 buttonrect.x = 230
 buttonrect.y = 350
+tonk = pygame.image.load("assets/tonk.png")
 tank = pygame.image.load("assets/tank.png")
 infantry = pygame.image.load("assets/infantry.png")
 block = pygame.image.load("assets/terrain.png")
@@ -35,14 +36,19 @@ for y in range(10):
         blockrect = block.get_rect(left=x*70, top=y*70)
         terrain = (block, blockrect.copy())
         blocks.append(terrain)
-#allies
+#allies and enemys
+enemys = []
+for x in range(7):
+    tankrect = tank.get_rect(left=x*70, top=0)
+    enemys.append((tonk, tankrect, 12, 6))
 allies = []
 for x in range(7):
     tankrect = tank.get_rect(left=x*70, top=0)
-    allies.append((tank, tankrect))
+    allies.append((tank, tankrect, 10, 5))
 for x in range(7):
     peoplerect = infantry.get_rect(left=x*70, top=70)
-    allies.append((infantry, peoplerect))
+    allies.append((infantry, peoplerect, 5, 3))
+
 
 #font
 font = pygame.font.Font("assets/pixel.ttf", 16)
@@ -61,6 +67,8 @@ def draw():
             screen.blit(pas[0], pas[1])
         for allie in allies:
             screen.blit(allie[0], allie[1])
+        for enemy in enemys:
+            screen.blit(enemy[0], enemy[1])
 while True:
     draw()
     pygame.display.update()
@@ -72,7 +80,7 @@ while True:
             if event.button == 1:
                 on_mouse_down(event.pos)
     def on_mouse_down(pos):
-        global on, select, allies, blocks, target, move
+        global on, select, allies, blocks, target, move, destroy
 
         if on == False:
             if buttonrect.collidepoint(pos):
@@ -86,7 +94,14 @@ while True:
             else:
                 distance = math.sqrt((select[1].x - pos[0])**2 + (pos[1] - select[1].y)**2)
                 if distance <= 140:
-                    
+                    for enemy in enemys:
+                        if enemy[1].collidepoint(pos):
+                            enemy[3] -= select[2] 
+                            select[3] -= enemy[2]
+                            if enemy[3] <= 0:
+                                enemy[0] = destroy
+                            if select[3] <= 0:
+                                select[0] = destroy
                     if move = False:
                         for terr in blocks:
                             if terr[1].collidepoint(pos):
