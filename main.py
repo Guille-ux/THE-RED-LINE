@@ -127,7 +127,36 @@ while True:
  
                 select = None
                 target = None
-
-
+                ene = random.choice(enemys)
+                algo = False
+                for all in allies:
+                    distance = math.sqrt((ene[1].x - all[1])**2 + (all[1] - ene[1].y)**2)
+                    if distance <= 140:
+                        if enemy[1].colliderect(ene[1]):
+                            enemy[2] -= select[3] 
+                            select[2] -= enemy[3]
+                            if enemy[2] < select[2]:
+                                enemy[2] = 0
+                                enemy[0] = destroy
+                                ene[1].center = all[1].center
+                                break
+                            elif enemy[2] > select[2]:
+                                select[2] = 0
+                                select[0] = destroy
+                                ene[1].center = all[1].center
+                                break
+                            else:
+                                enemy[2], enemy[3] = 0, 0
+                                enemy[0] = destroy
+                                select[2], select[3] = 0, 0
+                                select[0] = destroy
+                                ene[1].center = all[1].center
+                                break
+                            algo = True
+                if not algo:
+                    if not ene[1].top == 0:
+                        ene[1].center += 70
+                    else:
+                        ene[1.center -= 70]
     pygame.display.flip()
     clock.tick(60)
