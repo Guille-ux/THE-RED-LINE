@@ -87,6 +87,7 @@ while True:
             if buttonrect.collidepoint(pos):
                 on = True
         else:
+            collision = False
             if select is None:
                 for allie in allies:
                     if allie[1].collidepoint(pos):
@@ -107,8 +108,8 @@ while True:
                             if select[2] <= 0:
                                 select[0] = destroy
                         select = None
-                        move = False
-                    if move == True:
+                        collision = True
+                    if is not collision:
                         for terr in blocks:
                             if terr[1].collidepoint(pos):
                                 target = terr
