@@ -65,7 +65,7 @@ def prep():
         allies.append([tank, tankrect, 10, 5, "attack"])
     for x in range(7):
         peoplerect = infantry.get_rect(left=x*70, top=70)
-        allies.append([infantry, peoplerect, 5, 3, "defend"])
+        allies.append([infantry, peoplerect, 5, 3.2, "defend"])
 
 def draw():
     global allies
