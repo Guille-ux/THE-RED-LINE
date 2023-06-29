@@ -83,9 +83,3 @@ Distributed under the MIT License. See [LICENSE](https://github.com/Guille-ux/TH
 
 * **Guille-ux** - *Creator of the game* - [Guille-ux](https://github.com/Guille-ux) - *Sprites, Music, SFX, very few code*
 * **Nunte** - *Contributed to the game* - [Nunte](https://github.com/NunteGamer) - *Sprites, Music, SFX, very few code*
-
-## Acknowledgements
-
-* []()
-* []()
-* []()
