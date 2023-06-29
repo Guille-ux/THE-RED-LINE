@@ -69,7 +69,6 @@ git clone https://github.com/Guille-ux/THE-RED-LINE/
 
 The best way for you to contribute to the game is to [report bugs](https://github.com/Guille-ux/THE-RED-LINE/issues) that appear in your game.
 
-### Creating A Pull Request
 
 
 
