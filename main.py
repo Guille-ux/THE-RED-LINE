@@ -193,7 +193,7 @@ while True:
                             if distance <= 140 and all[2] > 0:
                                 ene[1].center = all[1].center
                                 if all[1].colliderect(ene[1]):
-                                    algo = False
+                                    algo = True
                                     if all[4] == "defend":
                                         abonus += 0.50
                                     if ene[4] == "attack":
