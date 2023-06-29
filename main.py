@@ -28,6 +28,8 @@ pygame.display.set_caption("THE RED LINE")
 #graphics load
 destroy = pygame.image.load("assets/destroy.png")
 play = pygame.image.load("assets/play.png")
+icon = pygame.image.load("assets/icon.png")
+pygame.display.set_icon(icon)
 buttonrect = play.get_rect(centerx = 50)
 buttonrect.x = 200
 buttonrect.y = 300
