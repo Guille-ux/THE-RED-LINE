@@ -58,7 +58,7 @@ def prep():
         enemys.append([tonk, tankrect, 11, 5.5, "attack"])
     for x in range(7):
         tankrect = tank.get_rect(left=x*70, top=560)
-        enemys.append([n4z1s, tankrect, 5, 3.2, "defend"])
+        enemys.append([n4z1s, tankrect, 5, 3, "defend"])
     allies = []
     for x in range(7):
         tankrect = tank.get_rect(left=x*70, top=0)
