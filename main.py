@@ -214,16 +214,8 @@ while True:
                                         all[2], all[3] = 0, 0
                                         all[0] = destroy
                                         break
-
                     break
-                ene = random.choice(enemys)
-                if ene[2] <= 0:
-                    ene = None
-                    for ene2 in enemys:
-                        if ene2[2] > 0:
-                            ene = ene2
-                            break
-                if not algo and ene != None:
+                if not algo:
                     if not ene[1].top == 0:
                         ene[1].top -= 70
                     else:
