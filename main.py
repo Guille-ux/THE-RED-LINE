@@ -77,16 +77,16 @@ def draw():
     global lose
     screen.fill(BLACK)
     if on == False and win == False and lose == False:
-        screen.blit(text1, (150, 100))
+        screen.blit(text1, (130, 100))
         screen.blit(play, buttonrect)
     if on == False and win == True:
-        screen.blit(text1, (150, 100))
+        screen.blit(text1, (130, 100))
         screen.blit(play, buttonrect)
-        screen.blit(text2, (150, 200))
+        screen.blit(text2, (180, 200))
     if on == False and lose == True:
-        screen.blit(text1, (150, 100))
+        screen.blit(text1, (130, 100))
         screen.blit(play, buttonrect)
-        screen.blit(text3, (150, 200))
+        screen.blit(text3, (180, 200))
     elif on == True and win == False and lose == False:
         for pas in blocks:
             screen.blit(pas[0], pas[1])
