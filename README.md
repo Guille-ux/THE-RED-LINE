@@ -75,7 +75,7 @@ The best way for you to contribute to the game is to [report bugs](https://githu
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/Guille-ux/THE-RED-LINE/blob/main/LICENSE.md) for more information.
+Distributed under the GNU License. See [LICENSE](https://github.com/Guille-ux/THE-RED-LINE/blob/main/LICENSE.md) for more information.
 
 ## Authors
 
