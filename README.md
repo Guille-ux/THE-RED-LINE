@@ -32,8 +32,6 @@
 * [Contributing](#contributing)
 * [License](#license)
 * [Authors](#authors)
-* [Acknowledgements](#acknowledgements)
-
 ## About The Project
 
 ![Screen Shot](screenshots/imagen_2023-06-29_162249093.png)
