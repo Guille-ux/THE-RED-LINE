@@ -14,9 +14,9 @@
     <br/>
     <br/>
     <a href="https://github.com/Guille-ux/THE-RED-LINE">View Demo</a>
-    .
+    ·
     <a href="https://github.com/Guille-ux/THE-RED-LINE/issues">Report Bug</a>
-    .
+    ·
   </p>
 </p>
 
