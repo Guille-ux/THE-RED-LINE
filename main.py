@@ -22,7 +22,7 @@ ot = time.time()
 #game init
 pygame.init()
 pygame.mixer.init()
-pygame.mixer.music.load("assets/music.mp3")
+pygame.mixer.music.load("sfx/music.mp3")
 pygame.mixer.music.play(-1)
 screen = pygame.display.set_mode((500, 700))
 clock = pygame.time.Clock()
