@@ -29,7 +29,7 @@ clock = pygame.time.Clock()
 pygame.display.set_caption("THE RED LINE")
 #graphics load
 antitank = pygame.image.load("assets/antitank.png")
-fond = pygame.image.load("assets/found.png")
+sbg = pygame.image.load("assets/startbg.png")
 antitankn = pygame.image.load("assets/antitankn.png")
 destroy = pygame.image.load("assets/destroy.png")
 play = pygame.image.load("assets/play.png")
@@ -87,16 +87,16 @@ def draw():
     global lose
     screen.fill(BLACK)
     if on == False and win == False and lose == False:
-        screen.blit(fond, (0, 0))
+        screen.blit(sbg, (0, 0))
         screen.blit(text1, (130, 100))
         screen.blit(play, buttonrect)
     if on == False and win == True:
-        screen.blit(fond, (0, 0))
+        screen.blit(sbg, (0, 0))
         screen.blit(text1, (130, 100))
         screen.blit(play, buttonrect)
         screen.blit(text2, (180, 200))
     if on == False and lose == True:
-        screen.blit(fond, (0, 0))
+        screen.blit(sbg, (0, 0))
         screen.blit(text1, (130, 100))
         screen.blit(play, buttonrect)
         screen.blit(text3, (180, 200))
