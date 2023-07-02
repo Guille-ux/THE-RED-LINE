@@ -11,13 +11,13 @@ import ctypes
 myappid = 'guilleux.pythongame.theredline.idk' # arbitrary string
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
-# game constants
+#game constants
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 GREEN = (0, 255, 0)
-# game variables
+#game variables
 move = True
 on = False
 win = False
@@ -26,7 +26,7 @@ select = None
 target = None
 laser = 0
 ot = time.time()
-# game init
+#game init
 pygame.init()
 pygame.mixer.init()
 pygame.mixer.music.load("sfx/music.mp3")
@@ -34,9 +34,9 @@ pygame.mixer.music.play(-1)
 screen = pygame.display.set_mode((500, 700))
 clock = pygame.time.Clock()
 pygame.display.set_caption("THE RED LINE")
-# graphics load
+#graphics load
 antitank = pygame.image.load("assets/antitank.png")
-fond = pygame.image.load("assets/found.png")
+fond = pygame.image.load("assets/startbg.png")
 antitankn = pygame.image.load("assets/antitankn.png")
 destroy = pygame.image.load("assets/destroy.png")
 play = pygame.image.load("assets/play.png")
@@ -45,9 +45,11 @@ pygame.display.set_icon(icon)
 buttonrect = play.get_rect(centerx = 50)
 buttonrect.x = 200
 buttonrect.y = 300
+kv = pygame.image.load("assets/kv-2.png")
 n4z1s = pygame.image.load("assets/n4z1s.png")
 tonk = pygame.image.load("assets/tonks.png")
 tank = pygame.image.load("assets/tank.png")
+tiger = pygame.image.load("assets/tiger.png")
 infantry = pygame.image.load("assets/infantry.png")
 block = pygame.image.load("assets/terrain.png")
 blocks = []
@@ -69,7 +71,10 @@ def prep():
     enemys = []
     for x in range(7):
         tankrect = tank.get_rect(left=x*70, top=630)
-        enemys.append([tonk, tankrect, 11, 5.5, "attack"])
+        if x % 2 == 0:
+            enemys.append([tonk, tankrect, 11, 5.5, "attack"])
+        else:
+            enemys.append([tiger, tankrect, 16, 10.5, "attack"])
     for x in range(7):
         tankrect = tank.get_rect(left=x*70, top=560)
         if x % 2 == 0:
@@ -79,7 +84,10 @@ def prep():
     allies = []
     for x in range(7):
         tankrect = tank.get_rect(left=x*70, top=0)
-        allies.append([tank, tankrect, 10, 5, "attack"])
+        if x % 2 == 0:
+            allies.append([tank, tankrect, 10, 5, "attack"])
+        else:
+            allies.append([kv, tankrect, 15, 10, "attack"])
     for x in range(7):
         peoplerect = infantry.get_rect(left=x*70, top=70)
         if x % 2 == 0:
@@ -231,7 +239,6 @@ while True:
                     else:
                         win = False
                         break
-
                 target = None
                 algo = False
                 for ene in enemys:
@@ -327,4 +334,3 @@ while True:
                 select = None
     clock.tick(60)
     pygame.display.flip()
-
