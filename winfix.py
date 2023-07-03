@@ -18,6 +18,7 @@ RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 GREEN = (0, 255, 0)
 #game variables
+info = False
 move = True
 on = False
 win = False
@@ -42,6 +43,14 @@ destroy = pygame.image.load("assets/destroy.png")
 play = pygame.image.load("assets/play.png")
 icon = pygame.image.load("assets/icon.png")
 pygame.display.set_icon(icon)
+2but = pygame.imgae.load("assets/INFO.png")
+2but_rect = 2but.get_rect(centerx = 50)
+2but_rect.x = 200
+2but_rect.y = 400
+3but = pygame.imgae.load("assets/back.png")
+3but_rect = 3but.get_rect(centerx = 50)
+3but_rect.x = 20
+3but_rect.y = 20
 buttonrect = play.get_rect(centerx = 50)
 buttonrect.x = 200
 buttonrect.y = 300
@@ -102,19 +111,25 @@ def draw():
     global lose
     screen.fill(BLACK)
     if on == False and win == False and lose == False:
+        screen.blit(fond, 0, 0)
+        screen.blit(3but, 3but_rect)
+    if on == False and win == False and lose == False:
         screen.blit(fond, (0, 0))
         screen.blit(text1, (130, 100))
         screen.blit(play, buttonrect)
+        screen.blit(2but, 2but_rect)
     if on == False and win == True:
         screen.blit(fond, (0, 0))
         screen.blit(text1, (130, 100))
         screen.blit(play, buttonrect)
         screen.blit(text2, (180, 200))
+        screen.blit(2but, 2but_rect)
     if on == False and lose == True:
         screen.blit(fond, (0, 0))
         screen.blit(text1, (130, 100))
         screen.blit(play, buttonrect)
         screen.blit(text3, (180, 200))
+        screen.blit(2but, 2but_rect)     
     elif on == True and win == False and lose == False:
         for pas in blocks:
             screen.blit(pas[0], pas[1])
@@ -158,12 +173,15 @@ while True:
                     all[0] = destroy
     def on_mouse_down(pos):
         global on, select, allies, blocks, target, move, destroy, laser, ot
-        if on == False:
+        if on == False an info == False:
             if buttonrect.collidepoint(pos):
                 on = True
                 win = False
                 lose = False
                 prep()
+        elif on == False and info == True:
+            if 3but_rect.collidepoint(pos):
+                info = False
         else:
             collision = False
             if select is None:
@@ -359,4 +377,3 @@ while True:
                 select = None
     clock.tick(60)
     pygame.display.flip()
-
