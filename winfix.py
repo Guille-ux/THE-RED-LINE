@@ -127,13 +127,13 @@ while True:
         lose = True
         for allie in allies:
             if allie[2] == 0:
-                pass
+                allie = destroy
             if allie[2] > 0:
                 lose = False
         win = True
         for ene in enemys:
             if ene[2] == 0:
-                pass
+                ene[0] = destroy
             if ene[2] > 0:
                 win = False
     else:
@@ -195,6 +195,14 @@ while True:
                                 abonus += 1
                             elif select[0] == "assets/antitank.png" and enemy[0] == "assets/n4z1s.png":
                                 ebonus += 1
+                            elif select[0] == "assets/kv-2.png" and enemy[0] == "assets/tonks.png":
+                                abonus += 0.50
+                            elif select[0] == "assets/tank.png" and enemy[0] == "assets/tiger.png":
+                                ebonus += 0.50
+                            elif select[0] == "assets/antitank.png" and enemy[0] == "assets/tiger.png":
+                                abonus += 1.25
+                            elif select[0] == "assets/kv-2.png" and enemy[0] "assets/antitankn.png":
+                                ebonus += 1.25
                             if select[4] == "attack":
                                 abonus += 0.50
                             enemy[2] -= select[3] * abonus
@@ -258,10 +266,18 @@ while True:
                                     elif all[0] == "assets/infantry.png" and ene[0] == "assets/n4z1s.png":
                                         abonus += 0.25
                                         ebonus += 0.25
-                                    elif select[0] == "assets/infantry.png" and enemy[0] == "assets/antitankn.png":
+                                    elif all[0] == "assets/infantry.png" and ene[0] == "assets/antitankn.png":
                                         abonus += 1
-                                    elif select[0] == "assets/antitank.png" and enemy[0] == "assets/n4z1s.png":
+                                    elif all[0] == "assets/antitank.png" and ene[0] == "assets/n4z1s.png":
                                         ebonus += 1
+                                    elif all[0] == "assets/kv-2.png" and enemy[0] == "assets/tonks.png":
+                                        abonus += 0.50
+                                    elif all[0] == "assets/tank.png" and ene[0] == "assets/tiger.png":
+                                        ebonus += 0.50
+                                    elif select[0] == "assets/antitank.png" and enemy[0] == "assets/tiger.png":
+                                        abonus += 1.25
+                                    elif all[0] == "assets/kv-2.png" and ene[0] "assets/antitankn.png":
+                                        ebonus += 1.25
                                     if all[4] == "defend":
                                         abonus += 0.50
                                     if ene[4] == "attack":
@@ -309,7 +325,16 @@ while True:
                                  ebonus += 0.25
                              elif select[0] == "assets/infantry.png" and enemy[0] == "assets/antitankn.png":
                                  abonus += 1
-                             elif select[0] == "assets/antitank.png" and enemy[0] == "assets/n4z1s.png":
+                              elif all[0] == "assets/antitank.png" and ene[0] == "assets/n4z1s.png":
+                                 ebonus += 1
+                             elif all[0] == "assets/kv-2.png" and enemy[0] == "assets/tonks.png":
+                                 abonus += 0.50
+                             elif all[0] == "assets/tank.png" and ene[0] == "assets/tiger.png":
+                                 ebonus += 0.50
+                             elif select[0] == "assets/antitank.png" and enemy[0] == "assets/tiger.png":
+                                 abonus += 1.25
+                             elif all[0] == "assets/kv-2.png" and ene[0] "assets/antitankn.png":
+                                 ebonus += 1.25
                                  ebonus += 1
                              if all[4] == "defend":
                                  abonus += 0.50
@@ -334,3 +359,4 @@ while True:
                 select = None
     clock.tick(60)
     pygame.display.flip()
+
