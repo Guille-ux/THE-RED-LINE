@@ -43,11 +43,11 @@ destroy = pygame.image.load("assets/destroy.png")
 play = pygame.image.load("assets/play.png")
 icon = pygame.image.load("assets/icon.png")
 pygame.display.set_icon(icon)
-2but = pygame.imgae.load("assets/INFO.png")
+2but = pygame.image.load("assets/INFO.png")
 2but_rect = 2but.get_rect(centerx = 50)
 2but_rect.x = 200
 2but_rect.y = 400
-3but = pygame.imgae.load("assets/back.png")
+3but = pygame.image.load("assets/back.png")
 3but_rect = 3but.get_rect(centerx = 50)
 3but_rect.x = 20
 3but_rect.y = 20
