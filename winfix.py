@@ -43,14 +43,14 @@ destroy = pygame.image.load("assets/destroy.png")
 play = pygame.image.load("assets/play.png")
 icon = pygame.image.load("assets/icon.png")
 pygame.display.set_icon(icon)
-2but = pygame.image.load("assets/INFO.png")
-2but_rect = 2but.get_rect(centerx = 50)
-2but_rect.x = 200
-2but_rect.y = 400
-3but = pygame.image.load("assets/back.png")
-3but_rect = 3but.get_rect(centerx = 50)
-3but_rect.x = 20
-3but_rect.y = 20
+butt = pygame.image.load("assets/INFO.png")
+butt_rect = butt.get_rect(centerx = 50)
+butt_rect.x = 200
+butt_rect.y = 400
+but = pygame.image.load("assets/back.png")
+but_rect = but.get_rect(centerx = 50)
+but_rect.x = 20
+but_rect.y = 20
 buttonrect = play.get_rect(centerx = 50)
 buttonrect.x = 200
 buttonrect.y = 300
@@ -109,27 +109,28 @@ def draw():
     global on
     global win
     global lose
+    global info
     screen.fill(BLACK)
-    if on == False and win == False and lose == False:
-        screen.blit(fond, 0, 0)
-        screen.blit(3but, 3but_rect)
-    if on == False and win == False and lose == False:
+    if on == False and info == True:
+        screen.blit(fond, (0, 0))
+        screen.blit(but, but_rect)
+    elif on == False and win == False and lose == False and info == False:
         screen.blit(fond, (0, 0))
         screen.blit(text1, (130, 100))
         screen.blit(play, buttonrect)
-        screen.blit(2but, 2but_rect)
-    if on == False and win == True:
+        screen.blit(butt, butt_rect)
+    elif on == False and win == True:
         screen.blit(fond, (0, 0))
         screen.blit(text1, (130, 100))
         screen.blit(play, buttonrect)
         screen.blit(text2, (180, 200))
-        screen.blit(2but, 2but_rect)
-    if on == False and lose == True:
+        screen.blit(butt, butt_rect)
+    elif on == False and lose == True:
         screen.blit(fond, (0, 0))
         screen.blit(text1, (130, 100))
         screen.blit(play, buttonrect)
         screen.blit(text3, (180, 200))
-        screen.blit(2but, 2but_rect)     
+        screen.blit(butt, butt_rect)
     elif on == True and win == False and lose == False:
         for pas in blocks:
             screen.blit(pas[0], pas[1])
@@ -172,15 +173,19 @@ while True:
                     all[2] = 0
                     all[0] = destroy
     def on_mouse_down(pos):
-        global on, select, allies, blocks, target, move, destroy, laser, ot
-        if on == False an info == False:
+        global on, select, allies, blocks, target, move, destroy, laser, ot, info
+        if on == False and info == False:
             if buttonrect.collidepoint(pos):
                 on = True
                 win = False
                 lose = False
                 prep()
+            elif butt_rect.collidepoint(pos):
+                info = True
+                win = False
+                lose = False
         elif on == False and info == True:
-            if 3but_rect.collidepoint(pos):
+            if but_rect.collidepoint(pos):
                 info = False
         else:
             collision = False
@@ -219,7 +224,7 @@ while True:
                                 ebonus += 0.50
                             elif select[0] == "assets/antitank.png" and enemy[0] == "assets/tiger.png":
                                 abonus += 1.25
-                            elif select[0] == "assets/kv-2.png" and enemy[0] "assets/antitankn.png":
+                            elif select[0] == "assets/kv-2.png" and enemy[0] == "assets/antitankn.png":
                                 ebonus += 1.25
                             if select[4] == "attack":
                                 abonus += 0.50
@@ -294,7 +299,7 @@ while True:
                                         ebonus += 0.50
                                     elif select[0] == "assets/antitank.png" and enemy[0] == "assets/tiger.png":
                                         abonus += 1.25
-                                    elif all[0] == "assets/kv-2.png" and ene[0] "assets/antitankn.png":
+                                    elif all[0] == "assets/kv-2.png" and ene[0] == "assets/antitankn.png":
                                         ebonus += 1.25
                                     if all[4] == "defend":
                                         abonus += 0.50
@@ -343,7 +348,7 @@ while True:
                                  ebonus += 0.25
                              elif select[0] == "assets/infantry.png" and enemy[0] == "assets/antitankn.png":
                                  abonus += 1
-                              elif all[0] == "assets/antitank.png" and ene[0] == "assets/n4z1s.png":
+                             elif all[0] == "assets/antitank.png" and ene[0] == "assets/n4z1s.png":
                                  ebonus += 1
                              elif all[0] == "assets/kv-2.png" and enemy[0] == "assets/tonks.png":
                                  abonus += 0.50
@@ -351,7 +356,7 @@ while True:
                                  ebonus += 0.50
                              elif select[0] == "assets/antitank.png" and enemy[0] == "assets/tiger.png":
                                  abonus += 1.25
-                             elif all[0] == "assets/kv-2.png" and ene[0] "assets/antitankn.png":
+                             elif all[0] == "assets/kv-2.png" and ene[0] == "assets/antitankn.png":
                                  ebonus += 1.25
                                  ebonus += 1
                              if all[4] == "defend":
@@ -377,3 +382,4 @@ while True:
                 select = None
     clock.tick(60)
     pygame.display.flip()
+
