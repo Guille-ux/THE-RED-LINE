@@ -40,16 +40,12 @@ In "The Red Line" you will play the role of the Soviets. Your mission will be to
 A game written entirely in Python, with its own sprites, music and sound effects.
 
 ## Built With
-
-Game created entirely with Pyhton-
-
 * [Python [Code]](https://www.python.org)
 * [Pygame [Code]](https://www.pygame.org)
 * [Gimp [Sprites]](https://www.gimp.org)
 * [Aseprite [Sprites]](https://www.aseprite.org)
 * [FL Studio 20 [Music]](https://www.image-line.com/fl-studio/)
 * [bfxr [SFX]](https://www.bfxr.net)
-* [Pygame [Code]](https://www.pygame.org)
 
 ## Getting Started
 
