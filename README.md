@@ -54,7 +54,9 @@ This is a guide to help you clone the source code of this game on your computer.
 ### Prerequisites
 
 · You will need [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
 · [Python](https://www.python.org)
+
 · [Pygame](https://www.pygame.org)
 
 ### Installation
