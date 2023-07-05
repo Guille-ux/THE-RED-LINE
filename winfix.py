@@ -38,6 +38,7 @@ pygame.display.set_caption("THE RED LINE")
 #graphics load
 antitank = pygame.image.load("assets/antitank.png")
 fond = pygame.image.load("assets/startbg.png")
+inf = pygame.image.load("assets/infobg.png")
 antitankn = pygame.image.load("assets/antitankn.png")
 destroy = pygame.image.load("assets/destroy.png")
 play = pygame.image.load("assets/play.png")
@@ -49,8 +50,8 @@ butt_rect.x = 200
 butt_rect.y = 400
 but = pygame.image.load("assets/back.png")
 but_rect = but.get_rect(centerx = 50)
-but_rect.x = 20
-but_rect.y = 20
+but_rect.x = 0
+but_rect.y = 0
 buttonrect = play.get_rect(centerx = 50)
 buttonrect.x = 200
 buttonrect.y = 300
@@ -112,7 +113,7 @@ def draw():
     global info
     screen.fill(BLACK)
     if on == False and info == True:
-        screen.blit(fond, (0, 0))
+        screen.blit(inf, (0, 0))
         screen.blit(but, but_rect)
     elif on == False and win == False and lose == False and info == False:
         screen.blit(fond, (0, 0))
@@ -143,7 +144,7 @@ while True:
         lose = True
         for allie in allies:
             if allie[2] == 0:
-                allie = destroy
+                allie[0] = destroy
             if allie[2] > 0:
                 lose = False
         win = True
