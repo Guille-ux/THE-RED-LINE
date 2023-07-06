@@ -34,7 +34,7 @@
 * [Authors](#authors)
 ## About The Project
 
-![Screen shot](screenshots/Screen.png)
+![Screen shot](screenshots/screen.png)
 
 In "The Red Line" you will play the role of the Soviets. Your mission will be to lead them to victory against the Germans.
 A game written entirely in Python, with its own sprites, music and sound effects.
