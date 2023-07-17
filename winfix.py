@@ -30,8 +30,10 @@ ot = time.time()
 #game init
 pygame.init()
 pygame.mixer.init()
-pygame.mixer.music.load("sfx/music.mp3")
-pygame.mixer.music.play(-1)
+h = pygame.mixer.music.load("sfx/music.mp3")
+b = pygame.mixer.music.load("sfx/explosion.wav")
+bb = pygame.mixer.music.load("sfx/shoot.wav")
+h.play(-1)
 screen = pygame.display.set_mode((500, 700))
 clock = pygame.time.Clock()
 pygame.display.set_caption("THE RED LINE")
@@ -75,6 +77,9 @@ text1 = font1.render("THE RED LINE", False, BLACK)
 text2 = font1.render("[=WIN=]", False, BLACK)
 text3 = font1.render("[=LOSE=]", False, BLACK)
 #functions
+def sondi():
+    b.play()
+    bb.play()
 def prep():
     global enemys
     global allies
@@ -205,6 +210,7 @@ while True:
                 if distance <= 140:
                     for enemy in enemys:
                         if enemy[1].collidepoint(pos) and enemy[2] > 0:
+                            sondi()
                             if select[0] == "assets/antitank.png" and enemy[0] == "assets/tonks.png":
                                 abonus += 0.25
                             elif select[0] == "assets/tank.png" and enemy[0] == "assets/antitankn.png":
@@ -278,6 +284,7 @@ while True:
                         for all in allies:
                             distance = math.sqrt((ene[1].x - all[1].x)**2 + (all[1].y - ene[1].y)**2)
                             if distance <= 140 and all[2] > 0:
+                               sondi()
                                 ene[1].center = all[1].center
                                 if all[1].colliderect(ene[1]):
                                     if all[0] == "assets/antitank.png" and ene[0] == "assets/tonks.png":
@@ -337,6 +344,7 @@ while True:
                         ene[1].top += 70
                     for all in allies:
                          if all[1].colliderect(ene[1]):
+                             sondi()
                              if all[0] == "assets/antitank.png" and ene[0] == "assets/tonks.png":
                                  abonus += 0.25
                              elif all[0] == "assets/tank.png" and ene[0] == "assets/antitankn.png":
