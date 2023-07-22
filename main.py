@@ -23,9 +23,9 @@ ot = time.time()
 #game init
 pygame.init()
 pygame.mixer.init()
-h = pygame.mixer.music.load("sfx/music.mp3")
-b = pygame.mixer.music.load("sfx/explosion.wav")
-bb = pygame.mixer.music.load("sfx/shoot.wav")
+h = pygame.mixer.Sound("sfx/music.mp3")
+b = pygame.mixer.Sound("sfx/explosion.wav")
+bb = pygame.mixer.Sound("sfx/shoot.wav")
 h.play(-1)
 screen = pygame.display.set_mode((500, 700))
 clock = pygame.time.Clock()
@@ -277,7 +277,7 @@ while True:
                         for all in allies:
                             distance = math.sqrt((ene[1].x - all[1].x)**2 + (all[1].y - ene[1].y)**2)
                             if distance <= 140 and all[2] > 0:
-                               sondi()
+                                sondi()
                                 ene[1].center = all[1].center
                                 if all[1].colliderect(ene[1]):
                                     if all[0] == "assets/antitank.png" and ene[0] == "assets/tonks.png":
