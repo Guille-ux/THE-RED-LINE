@@ -284,7 +284,7 @@ while True:
                         for all in allies:
                             distance = math.sqrt((ene[1].x - all[1].x)**2 + (all[1].y - ene[1].y)**2)
                             if distance <= 140 and all[2] > 0:
-                               sondi()
+                                sondi()
                                 ene[1].center = all[1].center
                                 if all[1].colliderect(ene[1]):
                                     if all[0] == "assets/antitank.png" and ene[0] == "assets/tonks.png":
