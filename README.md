@@ -20,7 +20,8 @@
   </p>
 </p>
 
-![Downloads](https://img.shields.io/github/downloads/Guille-ux/THE-RED-LINE/total) ![Contributors](https://img.shields.io/github/contributors/Guille-ux/THE-RED-LINE?color=dark-green) ![Issues](https://img.shields.io/github/issues/Guille-ux/THE-RED-LINE) ![License](https://img.shields.io/github/license/Guille-ux/THE-RED-LINE) [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J2JVFYI)
+![Downloads](https://img.shields.io/github/downloads/Guille-ux/THE-RED-LINE/total) ![Contributors](https://img.shields.io/github/contributors/Guille-ux/THE-RED-LINE?color=dark-green) ![Issues](https://img.shields.io/github/issues/Guille-ux/THE-RED-LINE) ![License](https://img.shields.io/github/license/Guille-ux/THE-RED-LINE)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J2JVFYI)
 
 ## Table Of Contents
 
