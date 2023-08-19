@@ -81,5 +81,5 @@ Distributed under the GNU License. See [LICENSE](https://github.com/Guille-ux/TH
 
 ## Authors
 
-* **Guille-ux** - *Creator of the game* - [Guille-ux](https://github.com/Guille-ux) - *Sprites, Music, SFX, very few code*
+* **Guille-ux** - *Creator of the game* - [Guille-ux](https://github.com/Guille-ux) - *Code, Sprites*
 * **Nunte** - *Contributed to the game* - [Nunte](https://github.com/NunteGamer) - *Sprites, Music, SFX, very few code*
